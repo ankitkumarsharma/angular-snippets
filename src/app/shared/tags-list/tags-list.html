@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="row">
+        <div class="col">
+            <ul class="list-inline">
+                @for (tag of tagsList; track tag) {
+                    <li class="list-inline-item">
+                        <div (click)="onTagFn(tag)" class="card-fill-sm">
+                            {{tag.name}}
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

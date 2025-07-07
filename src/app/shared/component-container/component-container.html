@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="row">
+        <div class="col-2">
+            <button class="btn primary-btn" (click)="onBackFn()">Back</button>
+        </div>
+    </div>
+    <div class="space-10"></div>
+    <h2>
+        {{ selectedTag().title}}
+    </h2>
+    <p>
+        {{ selectedTag().description}}
+    </p>
+    <hr />
+    <ng-content />
+</div>

@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use '../node_modules/bootstrap/scss/bootstrap.scss' as *;
+@use './app/scss/variable' as *;
+@use './app/scss/buttons' as *;
+@use './app/scss/common' as *;
+@use './app/scss/util' as *;
