@@ -1,11 +1,11 @@
 @use './variable' as *;
 .btn{
   min-width: 130px;
-  color: $whiteColor;
+  color: $white-color;
   border-radius: 35px;
   &:hover{
-    background-color: $secondaryColor;
-    color: $whiteColor;
+    background-color: $secondary-color;
+    color: $white-color;
   }
   &:focus{
     outline: 0;
@@ -14,15 +14,15 @@
 }
 .primary-btn{
   @extend .btn;
-  background-color: $primaryColor;
+  background-color: $primary-color;
 }
 .secondary-btn{
   @extend .btn;
-  background-color: $triColor;
+  background-color: $tri-color;
 }
 .sm-btn{
   @extend .btn;
-  background-color: $primaryColor;
+  background-color: $primary-color;
   width: 60px;
   min-width: auto;
 }

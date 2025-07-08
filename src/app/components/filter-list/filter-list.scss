@@ -1,0 +1,45 @@
+@use '../../scss/variable' as *;
+
+.filter-list-content {
+    padding: 10px;
+    .filter-list {
+        li {
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 12px;
+            background-color: $border;
+            &:hover {
+                color: $white-color;
+                background-color: $primary-color;
+            }
+            &.active {
+                color: $white-color;
+                background-color: $primary-color;
+            }
+        }
+    }
+
+    .filter-list-grid {
+        .list-inline {
+            li {
+                .filter-list-grid-item {
+                    width: 295px;
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 10px;
+                    margin-bottom: 15px;
+                    .name {
+                        font-size: 16px;
+                        padding: 5px;
+                    }
+                    .filter-list-item-img {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

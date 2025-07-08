@@ -1,1 +1,24 @@
-<p>filter-list works!</p>
+<div class="filter-list-content">
+    <ul class="list-inline filter-list">
+        @for (item of filterListData.filterList; track $index;let i = $index;) {
+        <li (click)="onFilterFn(item,i)" [class.active]="filterListActiveIndex == i" class="list-inline-item">
+            {{item.title}}
+        </li>
+        }
+    </ul>
+    <!-- filter-list Grid -->
+    <div class="filter-list-grid">
+        <ul class="list-inline">
+            @for (item of filterList; track $index) {
+            <li class="list-inline-item">
+                <div class="filter-list-grid-item">
+                    <div class="filter-list-item-img">
+                        <img [src]="item.image" [alt]="item.title" [title]="item.title" />
+                    </div>
+                    <h4 class="name">{{item.title}}</h4>
+                </div>
+            </li>
+            }
+        </ul>
+    </div>
+</div>

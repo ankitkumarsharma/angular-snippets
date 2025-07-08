@@ -4,3 +4,7 @@
 @use './app/scss/buttons' as *;
 @use './app/scss/common' as *;
 @use './app/scss/util' as *;
+
+body {
+    font-family: Trebuchet MS;
+}

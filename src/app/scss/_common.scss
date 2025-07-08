@@ -2,19 +2,19 @@
 
 .ak-title {
   font-size: 18px;
-  color: $primaryColor;
+  color: $primary-color;
   font-weight: 500;
 }
 
 .ak-sub-title {
   font-size: 16px;
-  color: $triColor;
+  color: $tri-color;
   font-weight: 500;
 }
 
 .ak-para {
   font-size: 14px;
-  color: $blackColor;
+  color: $black-color;
   opacity: 0.7;
 }
 
@@ -30,22 +30,22 @@
 
   &.disabled {
     pointer-events: none;
-    background-color: $whiteColor;
+    background-color: $white-color;
 
     &::after {
-      background: $errorColor;
+      background: $error-color;
     }
   }
 
   &:hover {
-    border-color: $primaryColor;
+    border-color: $primary-color;
   }
 }
 
 .error {
   font-size: 12px;
   font-style: italic;
-  color: $errorColor;
+  color: $error-color;
 }
 
 body {
@@ -61,23 +61,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $primaryColor;
-  color: $whiteColor;
+  background-color: $primary-color;
+  color: $white-color;
   font-size: 18px;
   cursor: pointer;
   &:hover {
-    background-color: $secondaryColor; 
+    background-color: $secondary-color; 
   }
   &.disabled {
     pointer-events: none;
-    background-color: $whiteColor;
+    background-color: $white-color;
 
     &::after {
-      background: $errorColor;
+      background: $error-color;
     }
   }
 
   &:hover {
-    border-color: $primaryColor;
+    border-color: $primary-color;
   }
 }
