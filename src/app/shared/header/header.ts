@@ -1,13 +1,11 @@
-import { Component, inject } from '@angular/core';
-import { TagsList } from '../tags-list/tags-list';
-import { SharedService } from '../services/shared.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  imports: [TagsList],
+  imports: [],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
-showTagContainer = inject(SharedService);
+
 }
