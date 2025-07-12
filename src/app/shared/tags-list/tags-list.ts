@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SharedService } from '../services/shared.service';
 import { Router } from '@angular/router';
 import { SearchTag } from "../search-tag/search-tag";
-import { TagModel } from './core/tags-list.model';
 import { CardDetails } from "../utils/card-details/card-details";
+import { CardDetailsModel } from '../../core/app.models';
 
 @Component({
   selector: 'app-tags-list',
@@ -20,7 +20,7 @@ export class TagsList {
   router = inject(Router);
   selectedTag = inject(SharedService).selectedTag;
 
-  filteredListFn(filteredList: TagModel[]) {
+  filteredListFn(filteredList: CardDetailsModel[]) {
     this.tagsList = filteredList;
   }
   

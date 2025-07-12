@@ -5,7 +5,7 @@
         <ul class="list-inline">
             @for (item of filterList; track $index) {
             <li class="list-inline-item">
-                <app-card-details [hover]="false" [data]="item" />
+                <app-card-details [showImg]="true" width="295px" [data]="item" />
             </li>
             }
         </ul>

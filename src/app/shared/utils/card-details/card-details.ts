@@ -11,6 +11,7 @@ import { CARD_DETAILS } from '../core/utils.constant';
 })
 export class CardDetails {
   data = input<CardDetailsModel>(CardDetailsObject);
-  hover = input<boolean>(true);
-  width = input<number>(CARD_DETAILS.cardDefaultWidth);
+  showImg = input<boolean>(false);
+  showTags = input<boolean>(false);
+  width = input<string>(CARD_DETAILS.cardDefaultWidth);
 }

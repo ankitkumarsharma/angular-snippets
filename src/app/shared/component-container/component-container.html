@@ -11,6 +11,11 @@
     <p>
         {{ selectedTag().description}}
     </p>
+    <ul class="list-inline">
+        @for (tag of selectedTag().tags; track $index) {
+        <li class="list-inline-item">{{tag}}</li>
+        }
+    </ul>
     <hr />
     <ng-content />
 </div>
