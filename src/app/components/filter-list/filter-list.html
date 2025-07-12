@@ -11,12 +11,7 @@
         <ul class="list-inline">
             @for (item of filterList; track $index) {
             <li class="list-inline-item">
-                <div class="filter-list-grid-item">
-                    <div class="filter-list-item-img">
-                        <img [src]="item.image" [alt]="item.title" [title]="item.title" />
-                    </div>
-                    <h4 class="name">{{item.title}}</h4>
-                </div>
+                <app-card-details [data]="item" />
             </li>
             }
         </ul>

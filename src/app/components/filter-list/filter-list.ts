@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FILTER_LIST } from './core/filter-list.constant';
+import { CardDetails } from "../../shared/card-details/card-details";
 
 @Component({
   selector: 'app-filter-list',
-  imports: [],
+  imports: [CardDetails],
   templateUrl: './filter-list.html',
   styleUrl: './filter-list.scss'
 })
