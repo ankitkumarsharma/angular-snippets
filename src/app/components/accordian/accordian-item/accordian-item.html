@@ -1,0 +1,11 @@
+<div class="accordion-item">
+    <h2 class="accordion-header" (click)="onAccordionToggle(item())">
+        {{item().title}}
+        <span [class.down]="!item().isActive"><img width="20px" src="assets/img/up.png" alt=""></span>
+    </h2>
+    <div [class.hide]="!item().isActive" class="accordion-collapse">
+        <div class="accordion-body">
+            <ng-content />
+        </div>
+    </div>
+</div>

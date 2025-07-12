@@ -9,6 +9,11 @@ export const ACCORDION_CONSTANTS = {
             category: 'custom-content',
         }
     ],
+    defaultItem: {
+        title: '',
+        content: '',
+        isActive: true
+    },
     sameContent: [
         {
             title: 'Accordion Item #1',
@@ -30,7 +35,7 @@ export const ACCORDION_CONSTANTS = {
         {
             title: 'Plain Text #1',
             content: {
-                type: 'text',   
+                type: 'text',
                 value: 'This is a custom content item that can be toggled independently.'
             },
             isActive: true

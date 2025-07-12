@@ -1,38 +1,30 @@
 <div class="accordion">
     @for (item of accordianData; track $index) {
-    <div class="accordion-item">
-        <h2 class="accordion-header" (click)="onAccordionToggle(item, $index)">
-            {{item.title}}
-            <span [class.down]="!item.isActive"><img width="20px" src="assets/img/up.png" alt=""></span>
-        </h2>
-        <div [class.hide]="!item.isActive" class="accordion-collapse">
-            <div class="accordion-body">
-                @if (item.content.type == 'text') {
-                {{item.content.value}}
-                } @else if (item.content.type == 'html') {
-                <div [innerHTML]="item.content.value"></div>
-                } @else if (item.content.type == 'image') {
-                <img [src]="item.content.value" alt="">
-                } @else if(item.content.type == 'video') {
-                <video controls>
-                    <source [src]="item.content.value" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                } @else if (item.content.type == 'form') {
-                <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-                    @for (control of formControls; track $index) {
-                    @if (control.type != 'button') {
-                    <label for="" class="form-label">{{control.label}}</label>
-                    <input [type]="control.type" [value]="control.value" class="form-control">
-                    } @else {
-                    <button type="submit" (click)="control.action()" class="btn primary-btn">{{control.label}}</button>
-                    }
-                    <div class="space-10"></div>
-                    }
-                </form>
-                }
-            </div>
-        </div>
-    </div>
+    <app-accordian-item [item]="item" (toggleItem)="onAccordionToggle($event)">
+        @if (item.content.type == 'text') {
+        {{item.content.value}}
+        } @else if (item.content.type == 'html') {
+        <div [innerHTML]="item.content.value"></div>
+        } @else if (item.content.type == 'image') {
+        <img [src]="item.content.value" alt="">
+        } @else if(item.content.type == 'video') {
+        <video controls>
+            <source [src]="item.content.value" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        } @else if (item.content.type == 'form') {
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            @for (control of formControls; track $index) {
+            @if (control.type != 'button') {
+            <label for="" class="form-label">{{control.label}}</label>
+            <input [type]="control.type" [value]="control.value" class="form-control">
+            } @else {
+            <button type="submit" (click)="control.action()" class="btn primary-btn">{{control.label}}</button>
+            }
+            <div class="space-10"></div>
+            }
+        </form>
+        }
+    </app-accordian-item>
     }
 </div>

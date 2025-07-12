@@ -1,15 +1,7 @@
 <div class="accordion">
     @for (item of accordianData; track $index) {
-    <div class="accordion-item">
-        <h2 class="accordion-header" (click)="onAccordionToggle(item, $index)">
-            {{item.title}}
-            <span [class.down]="!item.isActive"><img width="20px" src="assets/img/up.png" alt=""></span>
-        </h2>
-        <div [class.hide]="!item.isActive" class="accordion-collapse">
-            <div class="accordion-body">
-                {{item.content}}
-            </div>
-        </div>
-    </div>
+    <app-accordian-item [item]="item" (toggleItem)="onAccordionToggle($event)">
+        {{item.content}}
+    </app-accordian-item>
     }
 </div>
