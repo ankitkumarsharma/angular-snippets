@@ -3,11 +3,18 @@
     <div class="row">
         <div class="col">
             <ul class="list-inline">
-                @for (tag of tagsList; track tag) {
+                @if(tagsList && tagsList.length > 0) {
+                    @for (tag of tagsList; track tag) {
                     <li class="list-inline-item">
-                        <div (click)="onTagFn(tag)" class="card-fill-sm">
+                        <app-card-details (click)="onTagFn(tag)" [data]="tag" />
+                        <!-- <div (click)="onTagFn(tag)" class="card-fill-sm">
                             {{tag.name}}
-                        </div>
+                        </div> -->
+                    </li>
+                }
+                } @else {
+                    <li class="list-inline-item">
+                        No tags found
                     </li>
                 }
             </ul>

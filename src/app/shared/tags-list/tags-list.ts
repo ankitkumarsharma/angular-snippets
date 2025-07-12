@@ -5,15 +5,16 @@ import { SharedService } from '../services/shared.service';
 import { Router } from '@angular/router';
 import { SearchTag } from "../search-tag/search-tag";
 import { TagModel } from './core/tags-list.model';
+import { CardDetails } from "../card-details/card-details";
 
 @Component({
   selector: 'app-tags-list',
-  imports: [CommonModule, SearchTag],
+  imports: [CommonModule, SearchTag, CardDetails],
   templateUrl: './tags-list.html',
   styleUrl: './tags-list.scss'
 })
 export class TagsList {
-  tagsList:TagModel[] = TAGS_LIST;
+  tagsList:any = TAGS_LIST;
   showComponentContainer = inject(SharedService);
   showTagContainer = inject(SharedService);
   router = inject(Router);
