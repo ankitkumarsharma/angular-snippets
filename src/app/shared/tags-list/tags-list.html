@@ -6,10 +6,7 @@
                 @if(tagsList && tagsList.length > 0) {
                     @for (tag of tagsList; track tag) {
                     <li class="list-inline-item">
-                        <app-card-details (click)="onTagFn(tag)" [data]="tag" />
-                        <!-- <div (click)="onTagFn(tag)" class="card-fill-sm">
-                            {{tag.name}}
-                        </div> -->
+                        <app-card-details (click)="onTagFn(tag)" [width]="200" [data]="tag" />
                     </li>
                 }
                 } @else {

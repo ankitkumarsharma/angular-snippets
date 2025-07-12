@@ -1,14 +1,13 @@
-@use '../../scss/variable' as *;
+@use '../../../scss/variable' as *;
 
-.filter-list-grid-item {
-    width: 295px;
+.card-details-item {
     display: flex;
     flex-direction: column;
     margin-right: 10px;
     margin-bottom: 15px;
 
     &:hover {
-        .filter-list-item-img {
+        .hover {
             border: 2px solid $primary-color;
         }
 
@@ -22,7 +21,7 @@
         padding: 5px;
     }
 
-    .filter-list-item-img {
+    .card-details-item-img {
         border-radius: 6px;
 
         img {

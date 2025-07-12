@@ -5,7 +5,7 @@ import { SharedService } from '../services/shared.service';
 import { Router } from '@angular/router';
 import { SearchTag } from "../search-tag/search-tag";
 import { TagModel } from './core/tags-list.model';
-import { CardDetails } from "../card-details/card-details";
+import { CardDetails } from "../utils/card-details/card-details";
 
 @Component({
   selector: 'app-tags-list',

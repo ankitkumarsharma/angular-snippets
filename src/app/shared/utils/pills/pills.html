@@ -1,0 +1,9 @@
+<div class="pills">
+    <ul class="list-inline filter-list">
+        @for (item of pills(); track $index;let i = $index;) {
+        <li (click)="onPillsFn(item,i)" [class.active]="filterListActiveIndex == i" class="list-inline-item pill-item">
+            {{item.title}}
+        </li>
+        }
+    </ul>
+</div>

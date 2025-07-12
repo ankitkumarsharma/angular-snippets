@@ -1,5 +1,5 @@
-<div class="filter-list-grid-item">
-    <div class="filter-list-item-img">
+<div class="card-details-item" [style.width.px]="width()">
+    <div [class.hover]="hover()" class="card-details-item-img">
         <img [src]="data().image" [alt]="data().title" [title]="data().title" />
     </div>
     <h4 class="name">{{data().title}}</h4>

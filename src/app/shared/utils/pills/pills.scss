@@ -1,0 +1,19 @@
+@use '../../../scss/variable' as *;
+.pills {
+  .pill-item {
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: $primary-color;
+    color: $white-color;
+    cursor: pointer;
+
+    &.active {
+      background-color: $secondary-color;
+      color: $white-color;
+    }
+
+    &:hover {
+      background-color: darken($primary-color, 15%);
+    }
+  }
+}
