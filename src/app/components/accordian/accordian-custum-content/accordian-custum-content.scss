@@ -1,0 +1,27 @@
+@use '../../../scss/variable' as *;
+
+.accordion {
+    .accordion-item {
+        .accordion-header {
+            font-size: 16px;
+            font-weight: 600;
+            background: $light-color;
+            padding: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            span{
+                float: right;
+                &.down {
+                img {
+                    transform: rotate(180deg);
+                }
+            }
+            }
+        }
+        .accordion-collapse{
+            &.hide {
+                display: none;
+            }
+        }
+    }
+}

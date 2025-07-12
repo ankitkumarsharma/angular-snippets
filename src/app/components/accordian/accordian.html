@@ -1,1 +1,12 @@
-<p>accordian works!</p>
+<app-pills (pillTap)="onTabFn($event)" [pills]="accordianData.pills" />
+<div class="tab-content">
+    @if (tabActiveIndex == 0) {
+        <div class="tab-item">
+            <app-accordian-same-content/>
+        </div>
+    } @else {
+        <div class="tab-item">
+            <app-accordian-custum-content/>
+        </div>
+    }
+</div>  

@@ -1,0 +1,7 @@
+@use '../../scss/variable' as *;
+
+.tab-content{
+    border: 1px solid $border;
+    border-radius: 6px;
+    padding: 10px;
+}
