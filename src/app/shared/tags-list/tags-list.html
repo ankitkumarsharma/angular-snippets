@@ -3,8 +3,8 @@
     <div class="row">
         @if(tagsList && tagsList.length > 0) {
         @for (tag of tagsList; track tag) {
-        <div class="col">
-            <div class="div-item">
+        <div class="col-4">
+            <div [class.no-demo]="!tag.demo" class="div-item">
                 <app-card-details (click)="onTagFn(tag)" [width]="'100%'" [data]="tag" [showTags]="true" />
             </div>
         </div>
