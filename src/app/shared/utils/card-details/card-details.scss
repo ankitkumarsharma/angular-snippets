@@ -5,10 +5,16 @@
     flex-direction: column;
     margin-right: 10px;
     margin-bottom: 15px;
+    border: 2px solid $border;
+    border-radius: 6px;
 
     &:hover {
-        .hover {
-            border: 2px solid $primary-color;
+        border: 2px solid $primary-color;
+
+        .card-details-item-img {
+            h3 {
+                color: $primary-color
+            }
         }
 
         .name {
@@ -23,6 +29,29 @@
 
     .card-details-item-img {
         border-radius: 6px;
+
+        .content-details {
+            padding: 15px;
+
+            h3 {
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 5px;
+                min-height: 44px;
+            }
+
+            ul {
+                min-height: 82px;
+                li {
+                    padding: 5px 15px;
+                    border-radius: 20px;
+                    background-color: $light-color;
+                    color: $black-color;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
 
         img {
             border-radius: 6px;

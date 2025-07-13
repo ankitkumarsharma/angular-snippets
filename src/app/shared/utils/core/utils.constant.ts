@@ -6,5 +6,5 @@ export const PILLS = [
 ]
 
 export const CARD_DETAILS = {
-  cardDefaultWidth: 295,
+  cardDefaultWidth: '',
 }

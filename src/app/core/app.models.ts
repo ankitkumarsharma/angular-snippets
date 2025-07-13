@@ -15,4 +15,5 @@ export interface CardDetailsModel {
     url?: string,
     description?: string;
     name?: string;
+    tags?: Array<any>;
 }

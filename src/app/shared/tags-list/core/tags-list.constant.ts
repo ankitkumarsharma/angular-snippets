@@ -1,4 +1,4 @@
-import { TagModel } from "./tags-list.model";
+import { CardDetailsModel } from "../../../core/app.models";
 
 export const TAGS_LIST = [
     {
@@ -7,6 +7,7 @@ export const TAGS_LIST = [
         title: 'Filter List Component',
         image: '../assets/img/filter.jpg',
         description: 'A filter list component that allows you to filter items based on a clcik event term.',
+        tags: ['Angular 20','Filter','Reusable']
     },
     {
         name: 'Accordian',
@@ -14,6 +15,7 @@ export const TAGS_LIST = [
         title: 'Accordian Component',
         image: '../assets/img/filter.jpg',
         description: 'An accordian component that allows you to expand and collapse sections of content.',
+        tags: ['Angular 20','Accordian','Dynamic','Reusable']
     },
     {
         name: 'Tabs',
@@ -21,9 +23,10 @@ export const TAGS_LIST = [
         title: 'Tabs Component',
         image: '../assets/img/filter.jpg',
         description: 'A tabs component that allows you to switch between different sections of content.',
+        tags: ['Angular 20','Tabs','Dynamic','Reusable']
     },
 ]
-export const DEFAULT_TAG: TagModel = {
+export const DEFAULT_TAG: CardDetailsModel = {
     name: '', 
     url: '',
     title: '',

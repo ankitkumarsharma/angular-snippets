@@ -1,0 +1,21 @@
+@use '../../scss/variable' as *;
+
+.card {
+    min-height: 487px;
+
+    ul {
+        li {
+            padding: 5px 15px;
+            border-radius: 20px;
+            background-color: $light-color;
+            color: $black-color;
+            margin-bottom: 10px;
+        }
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: $primary-color;
+    }
+}

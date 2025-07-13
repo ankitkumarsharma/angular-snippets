@@ -1,6 +1,6 @@
 import { Component, inject, output } from '@angular/core';
 import { SharedService } from '../services/shared.service';
-import { TagModel } from '../tags-list/core/tags-list.model';
+import { CardDetailsModel } from '../../core/app.models';
 
 @Component({
   selector: 'app-search-tag',
@@ -10,7 +10,7 @@ import { TagModel } from '../tags-list/core/tags-list.model';
 })
 export class SearchTag {
   sharedService = inject(SharedService);
-  filteredListFn = output<TagModel[]>();
+  filteredListFn = output<CardDetailsModel[]>();
   
   filterResults(text: string) {
     let filteredList;
