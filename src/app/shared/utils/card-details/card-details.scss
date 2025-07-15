@@ -9,12 +9,7 @@
     border-radius: $border-radius-12;
 
     &:hover {
-        box-shadow: $box-shadow-2;
-        .card-details-item-img {
-            h3 {
-                color: $primary-color
-            }
-        }
+        box-shadow: $box-shadow;
 
         .name {
             color: $primary-color;

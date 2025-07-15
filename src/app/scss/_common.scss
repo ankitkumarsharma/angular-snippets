@@ -28,6 +28,7 @@
   margin-bottom: 15px;
   padding: 10px;
   border-radius: $border-radius-12;
+
   &.disabled {
     pointer-events: none;
     background-color: $white-color;
@@ -65,9 +66,11 @@ body {
   color: $white-color;
   font-size: 18px;
   cursor: pointer;
+
   &:hover {
     // background-color: $secondary-color; 
   }
+
   &.disabled {
     pointer-events: none;
     background-color: $white-color;
@@ -82,14 +85,29 @@ body {
   }
 }
 
-.border-radius-25{
+.border-radius-25 {
   border-radius: $border-radius-25;
 }
 
-.border-radius-12{
+.border-radius-12 {
   border-radius: $border-radius-12;
 }
 
-.box-shadow-1{
-  box-shadow: $box-shadow-1;
+.box-shadow {
+  box-shadow: $box-shadow;
+}
+
+.title-color {
+  background: $gradient-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @extend .title-color;
 }
