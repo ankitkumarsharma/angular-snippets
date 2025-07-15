@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { TAGS_LIST } from './core/tags-list.constant';
-import { CommonModule } from '@angular/common';
-import { SharedService } from '../services/shared.service';
+import { CommonModule } from '@angular/common'; 
 import { Router } from '@angular/router';
-import { SearchTag } from "../search-tag/search-tag";
-import { CardDetails } from "../utils/card-details/card-details";
+import { SearchTag } from "../search-tag/search-tag";  
+import { CardDetails } from '../../shared/utils/card-details/card-details';
+import { SharedService } from '../../shared/services/shared.service';
 import { CardDetailsModel } from '../../core/app.models';
 
 @Component({

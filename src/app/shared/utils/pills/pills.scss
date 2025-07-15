@@ -2,7 +2,7 @@
 .pills {
   .pill-item {
     padding: 5px 15px;
-    border-radius: 20px;
+    border-radius: $border-radius-25;
     background-color: $primary-color;
     color: $white-color;
     cursor: pointer;

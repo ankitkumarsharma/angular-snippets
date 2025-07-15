@@ -1,5 +1,5 @@
 import { Component, inject, WritableSignal } from '@angular/core';
-import { SharedService } from '../services/shared.service';
+import { SharedService } from '../../shared/services/shared.service';
 import { Router } from '@angular/router';
 import { CardDetailsModel } from '../../core/app.models';
 

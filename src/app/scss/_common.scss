@@ -27,7 +27,7 @@
   min-height: 160px;
   margin-bottom: 15px;
   padding: 10px;
-
+  border-radius: $border-radius-12;
   &.disabled {
     pointer-events: none;
     background-color: $white-color;
@@ -55,7 +55,7 @@ body {
 .card-fill-sm {
   height: 100px;
   min-width: 100px;
-  border-radius: 20px;
+  border-radius: $border-radius-25;
   margin-bottom: 15px;
   padding: 10px;
   display: flex;
@@ -80,4 +80,16 @@ body {
   &:hover {
     border-color: $primary-color;
   }
+}
+
+.border-radius-25{
+  border-radius: $border-radius-25;
+}
+
+.border-radius-12{
+  border-radius: $border-radius-12;
+}
+
+.box-shadow-1{
+  box-shadow: $box-shadow-1;
 }

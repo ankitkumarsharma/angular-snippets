@@ -5,12 +5,11 @@
     flex-direction: column;
     margin-right: 10px;
     margin-bottom: 15px;
-    border: 2px solid $border;
-    border-radius: 6px;
+    border: 1px solid $border;
+    border-radius: $border-radius-12;
 
     &:hover {
-        border: 2px solid $primary-color;
-
+        box-shadow: $box-shadow-2;
         .card-details-item-img {
             h3 {
                 color: $primary-color
@@ -28,7 +27,7 @@
     }
 
     .card-details-item-img {
-        border-radius: 6px;
+        border-radius: $border-radius-12;
 
         .content-details {
             padding: 15px;
@@ -44,7 +43,7 @@
                 min-height: 82px;
                 li {
                     padding: 5px 15px;
-                    border-radius: 20px;
+                    border-radius: $border-radius-25;
                     background-color: $light-color;
                     color: $black-color;
                     margin-bottom: 10px;
@@ -54,7 +53,7 @@
 
 
         img {
-            border-radius: 6px;
+            border-radius: $border-radius-12;
             width: 100%;
         }
     }

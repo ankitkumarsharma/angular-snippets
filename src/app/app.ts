@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ComponentContainer } from "./shared/component-container/component-container";
-import { Header } from './shared/header/header';
+import { ComponentContainer } from "./layout/component-container/component-container";
 import { SharedService } from './shared/services/shared.service';
-import { TagsList } from './shared/tags-list/tags-list';
-import { Footer } from "./shared/footer/footer";
+import { Footer } from './layout/footer/footer';
+import { TagsList } from './layout/tags-list/tags-list';
+import { Header } from './layout/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, ComponentContainer, TagsList, Footer],
+  imports: [RouterOutlet, ComponentContainer, TagsList, Footer, Header],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

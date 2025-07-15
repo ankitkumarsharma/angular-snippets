@@ -2,7 +2,7 @@
 .btn{
   min-width: 130px;
   color: $white-color;
-  border-radius: 35px;
+  border-radius: $border-radius-25;
   &:hover{
     background-color: $secondary-color;
     color: $white-color;
