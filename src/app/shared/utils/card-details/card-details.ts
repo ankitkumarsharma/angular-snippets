@@ -14,4 +14,5 @@ export class CardDetails {
   showImg = input<boolean>(false);
   showTags = input<boolean>(false);
   width = input<string>(CARD_DETAILS.cardDefaultWidth);
+  hoverContent = input<boolean>(false);
 }

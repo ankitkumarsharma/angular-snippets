@@ -1,0 +1,21 @@
+@use '../../scss/variable' as *;
+
+.welcome-section {
+    background-color: $light-color;
+    padding: 60px 0px;
+    margin-bottom: 50px;
+    .welcome-content-left{
+        .title{
+            color: $dark-color;
+            font-size: 40px;
+            font-weight: 700;
+            span{
+                display: block;
+            }
+        }
+        .subtitle{
+            font-size: 20px;
+            color: $dark-color;
+        }
+    }
+}

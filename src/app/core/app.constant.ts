@@ -15,5 +15,5 @@ export const CardDetailsObject: CardDetailsModel  = {
 }
 
 export const FOOTER = {
-    createdBy: '<p>© 2025 All rights reserved, Created by <a href="https://www.ankitkumarsharma.com/" target="_blank"> Ankit Kumar Sharma</a>'
+    createdBy: '© 2025 All rights reserved, Created by <a href="https://www.ankitkumarsharma.com/" target="_blank"> Ankit Kumar Sharma</a>'
 }

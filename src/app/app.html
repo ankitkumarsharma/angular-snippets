@@ -1,19 +1,16 @@
 <app-header />
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="content">
-        <div class="space-100"></div>
-        @if (showTagContainer.showTagContainer()) {
-        <app-tags-list />
-        }
-        @if (showComponentContainer.showComponentContainer()) {
-        <app-component-container>
-          <router-outlet />
-        </app-component-container>
-        }
-      </div>
-      <app-footer />
-    </div>
-  </div>
-</div>
+@if (showTagContainer.showTagContainer()) {
+<app-home />
+<app-container-row>
+  <app-tags-list />
+</app-container-row>
+}
+@if (showComponentContainer.showComponentContainer()) {
+<div class="space-100"></div>
+<app-container-row>
+  <app-component-container>
+    <router-outlet />
+  </app-component-container>
+</app-container-row>
+}
+<app-footer />

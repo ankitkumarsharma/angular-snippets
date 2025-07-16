@@ -2,15 +2,15 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from '../../shared/services/shared.service';
 import { HEADER } from '../core/layout.constant';
+import { Logo } from "../../shared/utils/logo/logo";
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [Logo],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
-  logo:string = HEADER.logo;
   menu = HEADER.menuList;
   
   showComponentContainer = inject(SharedService);
