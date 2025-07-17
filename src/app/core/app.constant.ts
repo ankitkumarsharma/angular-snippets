@@ -5,7 +5,8 @@ export const LABELS = {
     fullName:'Ankit K Sharma',
     route: {
         home:'/'
-    }
+    },
+    snippets:'snippets'
 }
 
 export const CardDetailsObject: CardDetailsModel  = {

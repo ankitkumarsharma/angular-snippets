@@ -1,25 +1,28 @@
-<div class="card">
-    <div class="row">
-        <div class="col-2">
-            <button class="btn primary-btn" (click)="onBackFn()">Back</button>
+<div class="container">
+    <div class="space-30"></div>
+    <div class="card">
+        <div class="row">
+            <div class="col-2">
+                <button class="btn primary-btn" (click)="onBackFn()">Back</button>
+            </div>
         </div>
-    </div>
-    <div class="space-10"></div>
-    <div class="row">
-        <div class="col-6">
-            <h2>
-                {{ selectedTag().title}}
-            </h2>
+        <div class="space-10"></div>
+        <div class="row">
+            <div class="col-6">
+                <h2>
+                    {{ selectedTag().title}}
+                </h2>
+            </div>
         </div>
+        <p>
+            {{ selectedTag().description}}
+        </p>
+        <ul class="list-inline">
+            @for (tag of selectedTag().tags; track $index) {
+            <li class="list-inline-item border-radius-25">{{tag}}</li>
+            }
+        </ul>
+        <hr />
+        <router-outlet />
     </div>
-    <p>
-        {{ selectedTag().description}}
-    </p>
-    <ul class="list-inline">
-        @for (tag of selectedTag().tags; track $index) {
-        <li class="list-inline-item border-radius-25">{{tag}}</li>
-        }
-    </ul>
-    <hr />
-    <ng-content />
 </div>

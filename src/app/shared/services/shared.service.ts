@@ -6,8 +6,6 @@ import { DEFAULT_TAG, TAGS_LIST } from "../../layout/tags-list/core/tags-list.co
     providedIn: 'root'
 })
 export class SharedService {
-    showComponentContainer = signal(false);
-    showTagContainer = signal(true);
     selectedTag:WritableSignal<CardDetailsModel> = signal(DEFAULT_TAG);
     tagList = signal(TAGS_LIST);
 

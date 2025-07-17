@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from '../../shared/services/shared.service';
-import { HEADER } from '../core/layout.constant';
 import { Logo } from "../../shared/utils/logo/logo";
+import { HEADER } from '../core/layout.constant';
 
 @Component({
   selector: 'app-header',
@@ -12,14 +12,9 @@ import { Logo } from "../../shared/utils/logo/logo";
 })
 export class Header {
   menu = HEADER.menuList;
-  
-  showComponentContainer = inject(SharedService);
-  showTagContainer = inject(SharedService);
   router = inject(Router);
 
   onRouteFn(item:any) {
-    this.showComponentContainer.showComponentContainer.set(false);
-    this.showTagContainer.showTagContainer.set(true);
     this.router.navigate([item.route]);
   }
 }
