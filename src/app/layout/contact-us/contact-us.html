@@ -1,0 +1,64 @@
+<section class="contact-section">
+    <div class="space-30"></div>
+    <app-container-row>
+        <div class="row">
+            <div class="col">
+                <div class="content">
+                    <h6 class="title">{{contactDetails.title}}</h6>
+                    <p class="subtitle">{{contactDetails.desc}}
+                    </p>
+                    <a href="https://github.com/ankitkumarsharma/angular-snippets" class="btn primary-btn">Add Your
+                        Snippets +</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="text-center">
+                    <img width="300" src="../../../assets/img/contact-us.png" alt="">
+                </div>
+            </div>
+        </div>
+    </app-container-row>
+</section>
+<section class="contact-details">
+    <app-container-row>
+        <div class="contact-form">
+            <div class="row">
+                <div class="col">
+                    <div class="details">
+                        <ul class="list-unstyled">
+                            @for (item of contactDetails.detailsList; track $index) {
+                            <li>
+                                <div class="gaadiex-list-item">
+                                    <i [class]="item.icon"></i>
+                                    <div class="gaadiex-list-item-text">
+                                        <h6>{{item.title}}</h6>
+                                        <a [href]="item.link">{{item.label}}</a>
+                                    </div>
+                                </div>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="" placeholder="Enter your message" class="form-control"
+                                    id=""></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </app-container-row>
+</section>

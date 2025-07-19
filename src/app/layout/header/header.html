@@ -1,0 +1,20 @@
+<nav class="navbar box-shadow fixed-top navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <app-logo/>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        @for (item of menu; track $index) {
+          @if (item.route) {
+            <a class="nav-item border-radius-25 nav-link" (click)="onRouteFn(item)">{{item.title}}</a>
+          } @else {
+            <a class="nav-item border-radius-25 nav-link" target="_blank" [href]="item.url">{{item.title}} &nbsp; <i class="fab fa-github"></i></a>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</nav>

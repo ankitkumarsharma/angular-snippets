@@ -1,0 +1,65 @@
+@use '../../scss/variable' as *;
+
+.contact-section {
+    background-color: $light-color;
+    padding: 20px 0px;
+    margin-bottom: 50px;
+
+    .content {
+        .title {
+            color: $dark-color;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: $dark-color;
+        }
+    }
+}
+
+.contact-details {
+    .form {
+        .form-group {
+            margin-bottom: 20px;
+
+            .form-control {
+                border-radius: $border-radius-12;
+            }
+        }
+    }
+
+    .details {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        .gaadiex-list-item {
+            position: relative;
+            margin-bottom: 40px;
+
+            .gaadiex-list-item-text {
+                padding-left: 40px;
+
+                h6 {
+                    font-size: 18px;
+                    color: $dark-color;
+                }
+
+                a {
+                    color: $dark-color;
+                    font-size: 16px;
+                    text-decoration: none;
+                }
+            }
+
+            i {
+                color: $primary-color;
+                font-size: 25px;
+                position: absolute;
+                top: 10px;
+            }
+        }
+    }
+}

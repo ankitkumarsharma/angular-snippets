@@ -1,11 +1,11 @@
-import { Component, inject } from '@angular/core';
-import { TAGS_LIST } from './core/tags-list.constant';
 import { CommonModule } from '@angular/common';
-import { SharedService } from '../services/shared.service';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { SearchTag } from "../search-tag/search-tag";
-import { CardDetails } from "../utils/card-details/card-details";
 import { CardDetailsModel } from '../../core/app.models';
+import { SharedService } from '../../shared/services/shared.service';
+import { CardDetails } from '../../shared/utils/card-details/card-details';
+import { SearchTag } from "../search-tag/search-tag";
+import { TAGS_LIST } from './core/tags-list.constant';
 
 @Component({
   selector: 'app-tags-list',
@@ -15,8 +15,6 @@ import { CardDetailsModel } from '../../core/app.models';
 })
 export class TagsList {
   tagsList:any = TAGS_LIST;
-  showComponentContainer = inject(SharedService);
-  showTagContainer = inject(SharedService);
   router = inject(Router);
   selectedTag = inject(SharedService).selectedTag;
 
@@ -25,8 +23,6 @@ export class TagsList {
   }
   
   onTagFn(tag:any) {
-    this.showComponentContainer.showComponentContainer.set(true);
-    this.showTagContainer.showTagContainer.set(false);
     this.router.navigate([tag.url]);
     this.selectedTag.set(tag);
   }

@@ -1,5 +1,6 @@
 $primary-color: #1976D2;
 $secondary-color: #0a57a3;
+$purple-color: #764ba2;
 $light-color: #e7f1ff;;
 $accent-color: #F28C38;
 $dark-color: #424242;
@@ -11,3 +12,8 @@ $black-color: #000000;
 $border: #cccccc;
 $error-color: #ff4545;
 $success-color: #008000;
+$gradient-color: linear-gradient(to right, $primary-color, $purple-color);
+$gradient-color-2: linear-gradient(to right, $secondary-color, $purple-color);
+$border-radius-25: 25px;
+$border-radius-12: 12px;
+$box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

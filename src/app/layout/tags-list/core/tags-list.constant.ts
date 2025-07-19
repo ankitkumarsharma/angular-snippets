@@ -1,9 +1,9 @@
+import { LABELS } from "../../../core/app.constant";
 import { CardDetailsModel } from "../../../core/app.models";
-
 export const TAGS_LIST = [
     {
         name: 'Filter List',
-        url: '/filter-list',
+        url: `${LABELS.snippets}/filter-list`,
         title: 'Filter List Component',
         image: '../assets/img/filter.jpg',
         description: 'A filter list component that allows you to filter items based on a clcik event term.',
@@ -12,7 +12,7 @@ export const TAGS_LIST = [
     },
     {
         name: 'Dynamic Accordian',
-        url: '/accordian-dynamic',
+        url: `${LABELS.snippets}/accordian-dynamic`,
         title: 'Dynamic Accordian Component',
         image: '../assets/img/filter.jpg',
         description: 'An accordian component that allows you to expand and collapse sections of content.',
@@ -21,7 +21,7 @@ export const TAGS_LIST = [
     },
     {
         name: 'Dynamic Accordian with Custom items',
-        url: '/accordian-custom',
+        url: `${LABELS.snippets}/accordian-custom`,
         title: 'Dynamic Accordian with Custom items',
         image: '../assets/img/filter.jpg',
         description: 'An accordian component that allows you to expand and collapse sections of content.',
@@ -30,7 +30,7 @@ export const TAGS_LIST = [
     },
     {
         name: 'Tabs',
-        url: '/tabs',
+        url: `${LABELS.snippets}/tabs`,
         title: 'Tabs Component',
         image: '../assets/img/filter.jpg',
         description: 'A tabs component that allows you to switch between different sections of content.',

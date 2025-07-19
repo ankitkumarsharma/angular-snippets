@@ -1,0 +1,30 @@
+@use '../../scss/variable' as *;
+
+.gradient-item {
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    box-shadow: $box-shadow;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.98);
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    a {
+        cursor: pointer;
+        &.nav-item {
+            font-size: 16px;
+            padding: 5px 20px;
+            margin-right: 5px;
+            border: 2px solid transparent;
+            &:hover {
+                @extend .gradient-item;
+            }
+
+            &.active {
+                @extend .gradient-item;
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@use '../../scss/variable' as *;
+
+footer {
+    position: relative;
+    background-color: $light-color;
+    .footer-small{
+        padding: 15px;
+        text-align: center;
+    }
+}

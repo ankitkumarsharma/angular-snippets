@@ -1,6 +1,6 @@
-import { Component, inject, output } from '@angular/core';
-import { SharedService } from '../services/shared.service';
+import { Component, inject, output } from '@angular/core'; 
 import { CardDetailsModel } from '../../core/app.models';
+import { SharedService } from '../../shared/services/shared.service';
 
 @Component({
   selector: 'app-search-tag',
