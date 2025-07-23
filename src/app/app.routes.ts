@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './layout/home/home';
 import { ComponentContainer } from './layout/component-container/component-container';
-import { Auth } from './authentication/auth/auth';
+import { Auth } from './auth/auth';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,10 +16,10 @@ export const routes: Routes = [
     },
     { path: 'contact-us', loadComponent: () => import('./layout/contact-us/contact-us').then(m => m.ContactUs) },
     { 
-        path: 'auth', loadComponent: () => import('./authentication/auth/auth').then(m => m.Auth),
+        path: 'auth', component: Auth,
         children: [
-            { path: 'login', loadComponent: () => import('./authentication/login/login').then(m => m.Login) },
-            { path: 'sign-up', loadComponent: () => import('./authentication/sign-up/sign-up').then(m => m.SignUp) },
+            { path: 'login', loadComponent: () => import('./auth/login/login').then(m => m.Login) },
+            { path: 'sign-up', loadComponent: () => import('./auth/sign-up/sign-up').then(m => m.SignUp) },
         ]
     },
 ];

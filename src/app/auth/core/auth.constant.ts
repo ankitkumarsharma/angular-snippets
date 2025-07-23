@@ -89,16 +89,22 @@ export const SIGN_UP_FORM_CONFIG: NgAksFormsConfigModel = {
       options: [
         {
           label: 'Male',
-          value: ''
+          value: 'male'
         },
         {
           label: 'Female',
-          value: ''
+          value: 'female'
         },
         {
           label: 'Other',
-          value: ''
+          value: 'other'
         }
+      ],
+      validations: [
+        {
+          name: ValidationName.Required,
+          message: 'Gender is required',
+        },
       ],
     }
   ],
