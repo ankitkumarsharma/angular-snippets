@@ -13,5 +13,7 @@ export const routes: Routes = [
             { path: 'filter-list', loadComponent: () => import('./components/filter-list/filter-list').then(m => m.FilterList) },
         ]
     },
-    { path: 'contact-us', loadComponent: () => import('./layout/contact-us/contact-us').then(m => m.ContactUs) }
+    { path: 'contact-us', loadComponent: () => import('./layout/contact-us/contact-us').then(m => m.ContactUs) },
+    { path: 'login', loadComponent: () => import('./auth/login/login').then(m => m.Login) },
+    { path: 'sign-up', loadComponent: () => import('./auth/sign-up/sign-up').then(m => m.SignUp) },
 ];

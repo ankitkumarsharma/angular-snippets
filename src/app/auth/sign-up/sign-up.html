@@ -1,0 +1,8 @@
+<app-container-row>
+    <div class="card">
+        <ng-aks-forms [formConfig]="formConfig" (onGetForm)="onGetForm($event)">
+            <button (click)="onSubmitForm()" class="btn primary-btn" type="submit">Submit</button>
+        </ng-aks-forms>
+        <p>Already have an account? <a routerLink="/login">Login</a></p>
+    </div>
+</app-container-row>
