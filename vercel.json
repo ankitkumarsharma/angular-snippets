@@ -1,13 +1,13 @@
 {
     "version": 2,
     "builds": [{
-        "src":"server.ts",
+        "src":"dist/angular-snippets/server/server.mjs",
         "use":"@vercel/node"
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "server.ts"
+            "dest": "dist/angular-snippets/server/server.mjs"
         }
     ]
 }
