@@ -1,0 +1,27 @@
+@use '../../scss/variable' as *;
+
+.card {
+    width: 500px;
+    margin: 0px auto;
+    margin-top: 100px;
+    padding: 30px;
+    background-color: $light-color;
+    .title {
+        color: $dark-color;
+        font-size: 35px;
+        font-weight: 700;
+        margin-bottom: 20px;
+
+        span {
+            background: $gradient-color;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+
+    p {
+        text-align: center;
+        margin: 10px;
+    }
+}

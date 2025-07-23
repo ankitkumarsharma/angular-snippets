@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ContainerRow } from "../../shared/utils/container-row/container-row";
 import { NgAksForms } from '@ng-aks/forms';
-import { LOGIN_FORM_CONFIG } from '../core/auth.constant';
+import { LOGIN_FORM_CONFIG } from '../core/authentication.constant';
 import { FormGroup } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 

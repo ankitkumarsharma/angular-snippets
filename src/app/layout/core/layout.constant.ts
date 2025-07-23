@@ -31,6 +31,11 @@ export const HEADER = {
             title:'Contact Us',
             url: null,
             route:'/contact-us'
+        },
+        {
+            title:'Login',
+            url: null,
+            route:'/auth/login'
         }
     ]
 }
