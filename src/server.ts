@@ -13,7 +13,7 @@ import authRoutes from './app/server/routes/authRoutes';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 const corsOptions = {
-    // origin: 'xyz.com',
+    origin: 'https://angular-snippets.onrender.com/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow these HTTP methods
     credentials: true, // Allow credentials (cookies, authorization headers, TLS client certificates)
     optionsSuccessStatus: 204 // Response status for successful OPTIONS requests
