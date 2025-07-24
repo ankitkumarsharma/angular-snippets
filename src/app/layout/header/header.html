@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        @for (item of menu; track $index) {
+        @for (item of  menu(); track $index) {
           @if (item.route) {
             <a class="nav-item border-radius-25 nav-link" (click)="onRouteFn(item)">{{item.title}}</a>
           } @else {

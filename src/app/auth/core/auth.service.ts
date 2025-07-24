@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { inject, Injectable } from "@angular/core";
+import { inject, Injectable, signal } from "@angular/core";
 import { environment } from "../../../environments/environment";
 
 @Injectable({
@@ -7,8 +7,13 @@ import { environment } from "../../../environments/environment";
 })
 export class AuthService {
     http = inject(HttpClient);
+    isLoggedIn = signal(null);
 
-    getLoggedUser(params:any){
-        return this.http.post(`${environment.apiUrl}/auth/login`,params);
+    login(user:any){
+        return this.http.post(`${environment.apiUrl}/auth/login`,user);
+    }
+
+    signUp(user:any){
+        return this.http.post(`${environment.apiUrl}/auth/signup`,user);
     }
 }
