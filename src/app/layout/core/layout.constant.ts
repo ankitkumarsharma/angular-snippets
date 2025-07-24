@@ -42,7 +42,7 @@ export const HEADER = {
         {
             title:'Dashboard',
             url: null,
-            route:'/'
+            route:'/dashboard'
         },
         {
             title:'Contribute',
@@ -57,7 +57,7 @@ export const HEADER = {
         {
             title:'Logout',
             url: null,
-            route: null
+            route: '/'
         }
     ]
 }

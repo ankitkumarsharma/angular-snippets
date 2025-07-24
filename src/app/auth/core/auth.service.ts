@@ -7,7 +7,7 @@ import { environment } from "../../../environments/environment";
 })
 export class AuthService {
     http = inject(HttpClient);
-    isLoggedIn = signal(null);
+    isLoggedIn = signal<any>(null);
 
     login(user:any){
         return this.http.post(`${environment.apiUrl}/auth/login`,user);
@@ -15,5 +15,9 @@ export class AuthService {
 
     signUp(user:any){
         return this.http.post(`${environment.apiUrl}/auth/signup`,user);
+    }
+
+    logout(){
+        return this.http.post(`${environment.apiUrl}/auth/logout`,{});
     }
 }

@@ -27,8 +27,8 @@ export class Login {
     if (this.formGroup.valid) {
       this.authService.login(this.formGroup.value).subscribe((data: any) => {
         if (data) {
-          this.router.navigateByUrl('/');
-          this.authService.isLoggedIn.set(data._id);
+          this.router.navigateByUrl('/dashboard');
+          this.authService.isLoggedIn.set(data);
           this.sharedService.menu.set(HEADER.dashboardMenuList);
         }
       })

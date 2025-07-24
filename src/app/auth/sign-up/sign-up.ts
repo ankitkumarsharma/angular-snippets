@@ -20,7 +20,7 @@ export class SignUp {
   authService = inject(AuthService);
   router = inject(Router);
   sharedService = inject(SharedService);
-  
+
   onGetForm(e: FormGroup) {
     this.formGroup = e;
   }
@@ -28,8 +28,8 @@ export class SignUp {
     if (this.formGroup.valid) {
       this.authService.signUp(this.formGroup.value).subscribe((data: any) => {
         if (data) {
-          this.router.navigateByUrl('/');
-          this.authService.isLoggedIn.set(data._id);
+          this.router.navigateByUrl('/dashboard');
+          this.authService.isLoggedIn.set(data);
           this.sharedService.menu.set(HEADER.dashboardMenuList);
         }
       })
