@@ -1,12 +1,12 @@
 import { Injectable, signal, WritableSignal } from "@angular/core";
 import { CardDetailsModel } from "../../core/app.models";
-import { DEFAULT_TAG, TAGS_LIST } from "../../layout/tags-list/core/tags-list.constant";
+import { DEFAULT_SNIPPET, SNIPPETS_LIST } from "../../layout/snippets-list/core/snippets-list.constant";
 
 @Injectable({
     providedIn: 'root'
 })
 export class SharedService {
-    selectedTag:WritableSignal<CardDetailsModel> = signal(DEFAULT_TAG);
-    tagList = signal(TAGS_LIST);
+    selectedSnippet:WritableSignal<CardDetailsModel> = signal(DEFAULT_SNIPPET);
+    snippetsList = signal(SNIPPETS_LIST);
 
 }

@@ -11,7 +11,7 @@ import { SharedService } from '../../shared/services/shared.service';
 })
 export class ComponentContainer {
   router = inject(Router);
-  selectedTag:WritableSignal<CardDetailsModel> = inject(SharedService).selectedTag; 
+  selectedSnippet:WritableSignal<CardDetailsModel> = inject(SharedService).selectedSnippet; 
 
   onBackFn() {
     this.router.navigate(['/']);
