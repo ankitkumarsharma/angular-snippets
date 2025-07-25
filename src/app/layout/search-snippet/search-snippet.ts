@@ -3,22 +3,22 @@ import { CardDetailsModel } from '../../core/app.models';
 import { SharedService } from '../../shared/services/shared.service';
 
 @Component({
-  selector: 'app-search-tag',
+  selector: 'app-search-snippet',
   imports: [],
-  templateUrl: './search-tag.html',
-  styleUrl: './search-tag.scss'
+  templateUrl: './search-snippet.html',
+  styleUrl: './search-snippet.scss'
 })
-export class SearchTag {
+export class SearchSnippet {
   sharedService = inject(SharedService);
   filteredListFn = output<CardDetailsModel[]>();
   
   filterResults(text: string) {
     let filteredList;
     if (!text) {
-      filteredList = this.sharedService.tagList();
+      filteredList = this.sharedService.snippetsList();
     }
-    filteredList = this.sharedService.tagList().filter((tag) =>
-      tag.name.toLowerCase().includes(text.toLowerCase()),
+    filteredList = this.sharedService.snippetsList().filter((snippet:any) =>
+      snippet.name.toLowerCase().includes(text.toLowerCase()),
     );
     this.filteredListFn.emit(filteredList);
   }

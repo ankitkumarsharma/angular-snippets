@@ -10,15 +10,15 @@
         <div class="row">
             <div class="col-6">
                 <h2>
-                    {{ selectedTag().title}}
+                    {{ selectedSnippet().title}}
                 </h2>
             </div>
         </div>
         <p>
-            {{ selectedTag().description}}
+            {{ selectedSnippet().description}}
         </p>
         <ul class="list-inline">
-            @for (tag of selectedTag().tags; track $index) {
+            @for (tag of selectedSnippet().tags; track $index) {
             <li class="list-inline-item border-radius-25">{{tag}}</li>
             }
         </ul>

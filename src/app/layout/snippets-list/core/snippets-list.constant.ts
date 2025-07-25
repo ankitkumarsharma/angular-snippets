@@ -1,6 +1,6 @@
 import { LABELS } from "../../../core/app.constant";
 import { CardDetailsModel } from "../../../core/app.models";
-export const TAGS_LIST = [
+export const SNIPPETS_LIST = [
     {
         name: 'Filter List',
         url: `${LABELS.snippets}/filter-list`,
@@ -56,7 +56,7 @@ export const TAGS_LIST = [
         demo: false
     },
 ]
-export const DEFAULT_TAG: CardDetailsModel = {
+export const DEFAULT_SNIPPET: CardDetailsModel = {
     name: '', 
     url: '',
     title: '',
