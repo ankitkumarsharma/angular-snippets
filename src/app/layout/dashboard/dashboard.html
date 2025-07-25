@@ -1,0 +1,13 @@
+<section class="welcome-section">
+    <div class="space-50"></div>
+    <app-container-row>
+        <div class="row">
+            <div class="col">
+                <h6 class="title">Welcome <span>{{authService.isLoggedIn()?.name}}!</span></h6>
+            </div>
+        </div>
+    </app-container-row>
+</section>
+<app-container-row>
+    <app-tags-list />
+</app-container-row>

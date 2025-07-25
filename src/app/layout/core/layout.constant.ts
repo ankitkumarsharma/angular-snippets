@@ -31,6 +31,33 @@ export const HEADER = {
             title:'Contact Us',
             url: null,
             route:'/contact-us'
+        },
+        {
+            title:'Login',
+            url: null,
+            route:'/auth/login'
+        }
+    ],
+    dashboardMenuList: [
+        {
+            title:'Dashboard',
+            url: null,
+            route:'/dashboard'
+        },
+        {
+            title:'Contribute',
+            url:'https://github.com/ankitkumarsharma/angular-snippets',
+            route: null
+        },
+        {
+            title:'Contact Us',
+            url: null,
+            route:'/contact-us'
+        },
+        {
+            title:'Logout',
+            url: null,
+            route: '/'
         }
     ]
 }
