@@ -8,7 +8,7 @@ import { PageNotFound } from './layout/page-not-found/page-not-found';
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: Home },
-    { path: 'dashboard', canActivate: [AuthGuard], loadComponent: () => import('./layout/dashboard/dashboard').then(m => m.Dashboard) },
+    { path: 'dashboard',  loadComponent: () => import('./user/dashboard/dashboard').then(m => m.Dashboard) },
     {
         path: 'snippets', component: ComponentContainer, children: [
             { path: 'accordian-dynamic', loadComponent: () => import('./components/accordian/accordian-same-content/accordian-same-content').then(m => m.AccordianSameContent) },
