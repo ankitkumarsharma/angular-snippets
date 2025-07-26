@@ -1,0 +1,112 @@
+<app-container-row>
+    <div class="space-40"></div>
+    <h6 class="title">Add your <span>snippet</span> here</h6>
+    <p class="title-desc">
+        You can add your Angular Snippets in left panel and in right panel , you can check your snippet preview, what
+        you are creating. <br />
+        Let's start...
+    </p>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <h4>Snippet Form</h4>
+                <hr />
+                <form [formGroup]="addSnippetForm">
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-5 col-form-label">Title Name</label>
+                        <div class="col-sm-7">
+                            <input type="text" formControlName="title" placeholder="Enter Snippet Title Name"
+                                class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Description</label>
+                        <div class="col-sm-7">
+                            <textarea name="" placeholder="Enter Description" id="" formControlName="desc"
+                                class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Add Cover Image</label>
+                        <div class="col-sm-7">
+                            <input type="file" (change)="onCoverImageSelectedFn($event)" accept="image/*"
+                                formControlName="coverImg" class="form-control" placeholder="Enter Description">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Add Tags</label>
+                        <div class="col-sm-7">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <input [disabled]="tagList.length > 4" type="text" #addTag class="form-control"
+                                        placeholder="Enter tag name">
+                                </div>
+                                <div class="col-sm-5">
+                                    <button [disabled]="tagList.length > 4" (click)="onAddTagFn(addTag.value)"
+                                        class="btn secondary-btn">Add
+                                        Tag</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="list-inline tag-list">
+                                        @for (tag of tagList; track $index;let i = $index;) {
+                                        <li class="list-inline-item">
+                                            {{tag}}
+                                            <a (click)="onRemoveTagFn(i)" class="close"><i class="fa fa-times"
+                                                    aria-hidden="true"></i></a>
+                                        </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Add Content</label>
+                        <div class="col-sm-4">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Select</option>
+                                <option value="1">Heading</option>
+                                <option value="2">Paragraph</option>
+                                <option value="3">Image</option>
+                                <option value="3">Link</option>
+                                <option value="3">Horizontal Line Space</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1">
+                            <button class="btn secondary-btn">+</button>
+                        </div>
+                    </div> -->
+                    <button type="submit" (click)="onAddSnippetFn()" class="btn primary-btn">Add Snippet</button>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <h4>Preview your snippet</h4>
+                <hr />
+                <div class="card card-snippet-view">
+                    @if (coverImageUrl) {
+                    <div class="image-top-block">
+                        <img [src]="coverImageUrl" class="card-img-top" alt="...">
+                    </div>
+                    }
+                    <div class="card-body">
+                        @if (authService.isLoggedIn()) {
+                            <h6 class="user">&#64;{{authService.isLoggedIn()?.name}} <span>posted on 26 Jul 2025</span></h6>
+                        }
+                        <h3 class="card-title">{{addSnippetForm.value.title}}</h3>
+                        <ul class="list-inline tag-list">
+                            @for (tag of tagList; track $index) {
+                            <li class="list-inline-item">{{tag}}</li>
+                            }
+                        </ul>
+                        <p class="card-text">{{addSnippetForm.value.desc}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-container-row>

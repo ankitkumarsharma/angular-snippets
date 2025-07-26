@@ -1,0 +1,44 @@
+@use '../../scss/variable' as *;
+
+.card {
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .tag-list {
+        margin: 5px;
+
+        li {
+            a {
+                color: $error-color;
+                cursor: pointer;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+.card-snippet-view {
+    padding: 0px;
+
+    .image-top-block {
+        width: 100%;
+        height: 265px;
+        border-bottom: 1px solid $border;
+        padding: 15px;
+        .card-img-top {
+            width: 100%;
+            height: 230px;
+            object-fit: contain;
+        }
+    }
+    .card-body{
+            padding: 40px;
+            .user{
+                span{
+                    color: $dark-color;
+                }
+            }
+    }
+
+}
