@@ -111,3 +111,32 @@ h4,
 h5 {
   @extend .title-color;
 }
+
+.title {
+  color: $dark-color;
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+  span {
+    background: $gradient-color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.title-desc {
+  font-size: 20px;
+  color: $dark-color;
+}
+
+.tag-list {
+  li {
+    padding: 5px 15px;
+    background-color: $light-color;
+    color: $black-color;
+    margin-bottom: 10px;
+    @extend .border-radius-25;
+  }
+}

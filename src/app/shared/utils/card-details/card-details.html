@@ -7,7 +7,7 @@
             <h3>{{data().title}}</h3>
             @if (showTags()) {
             <p>{{data().description}}</p>
-            <ul class="list-inline">
+            <ul class="list-inline tag-list">
                 @for (tag of data().tags; track $index) {
                 <li class="list-inline-item">{{tag}}</li>
                 }

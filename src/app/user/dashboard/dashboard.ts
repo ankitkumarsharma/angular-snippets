@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { ContainerRow } from "../../shared/utils/container-row/container-row";
-import { TagsList } from "../tags-list/tags-list";
 import { AuthService } from '../../auth/core/auth.service';
+import { ContainerRow } from "../../shared/utils/container-row/container-row";
+import { SnippetsList } from '../../snippets/snippets-list/snippets-list';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [ContainerRow, TagsList],
+  imports: [ContainerRow, SnippetsList],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })

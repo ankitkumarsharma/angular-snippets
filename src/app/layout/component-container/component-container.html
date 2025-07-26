@@ -17,9 +17,9 @@
         <p>
             {{ selectedSnippet().description}}
         </p>
-        <ul class="list-inline">
+        <ul class="list-inline tag-list">
             @for (tag of selectedSnippet().tags; track $index) {
-            <li class="list-inline-item border-radius-25">{{tag}}</li>
+            <li class="list-inline-item">{{tag}}</li>
             }
         </ul>
         <hr />
