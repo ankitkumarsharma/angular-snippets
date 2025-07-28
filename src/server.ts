@@ -10,6 +10,7 @@ import cors from 'cors';
 
 import connectWithMongoDb from './app/server/db/connectWithMongoDb';
 import authRoutes from './app/server/routes/authRoutes';
+import snippetsRoutes from './app/server/routes/snippetsRoutes';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 const corsOptions = {
@@ -26,6 +27,7 @@ app.use(express.json()); // for parse incoming payload with json encoding from r
 app.use(cors(corsOptions));
 
 app.use('/api/auth', authRoutes);
+app.use('/api/snippets', snippetsRoutes);
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
