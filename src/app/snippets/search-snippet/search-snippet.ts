@@ -1,6 +1,7 @@
 import { Component, inject, output } from '@angular/core'; 
 import { CardDetailsModel } from '../../core/app.models';
 import { SharedService } from '../../shared/services/shared.service';
+import { Snippet } from '../core/snippets.model';
 
 @Component({
   selector: 'app-search-snippet',
@@ -17,8 +18,8 @@ export class SearchSnippet {
     if (!text) {
       filteredList = this.sharedService.snippetsList();
     }
-    filteredList = this.sharedService.snippetsList().filter((snippet:any) =>
-      snippet.name.toLowerCase().includes(text.toLowerCase()),
+    filteredList = this.sharedService.snippetsList().filter((snippet:Snippet) =>
+      snippet.title.toLowerCase().includes(text.toLowerCase()),
     );
     this.filteredListFn.emit(filteredList);
   }

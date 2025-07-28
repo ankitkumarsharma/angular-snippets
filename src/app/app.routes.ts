@@ -9,8 +9,8 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: Home },
     { path: 'dashboard', canActivate: [AuthGuard], loadComponent: () => import('./user/dashboard/dashboard').then(m => m.Dashboard) },
-    { path: 'add-snippet', loadComponent: () => import('./snippets/add-snippet/add-snippet').then(m => m.AddSnippet) },
-    { path: 'snippets/:userid/:id', loadComponent: () => import('./snippets/snippet-item/snippet-item').then(m => m.SnippetItem) },
+    { path: 'add-snippet', canActivate: [AuthGuard], loadComponent: () => import('./snippets/add-snippet/add-snippet').then(m => m.AddSnippet) },
+    { path: 'snippets/:userid/:id', canActivate: [AuthGuard], loadComponent: () => import('./snippets/snippet-item/snippet-item').then(m => m.SnippetItem) },
     {
         path: 'snippets', component: ComponentContainer, children: [
             { path: 'accordian-dynamic', loadComponent: () => import('./components/accordian/accordian-same-content/accordian-same-content').then(m => m.AccordianSameContent) },

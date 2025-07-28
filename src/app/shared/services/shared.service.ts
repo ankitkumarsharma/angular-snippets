@@ -9,6 +9,6 @@ import { SNIPPETS_LIST } from "../../snippets/snippets-list/core/snippets-list.c
 })
 export class SharedService {
     selectedSnippet:WritableSignal<Snippet> = signal(SNIPPETS_CONSTANTS.defaultSnippet);
-    snippetsList = signal(SNIPPETS_LIST);
+    snippetsList = signal([]);
     menu = signal<any[]>(HEADER.menuList);
 }

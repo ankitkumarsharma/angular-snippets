@@ -2,14 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from '../../shared/services/shared.service';
-import { CardDetails } from '../../shared/utils/card-details/card-details';
 import { SnippetsService } from '../core/snippets.service';
 import { SearchSnippet } from '../search-snippet/search-snippet';
 import { SnippetThumbnail } from "../snippet-thumbnail/snippet-thumbnail";
 
 @Component({
   selector: 'app-snippets-list',
-  imports: [CommonModule, SearchSnippet, CardDetails, SnippetThumbnail],
+  imports: [CommonModule, SearchSnippet, SnippetThumbnail],
   templateUrl: './snippets-list.html',
   styleUrl: './snippets-list.scss'
 })
@@ -18,6 +17,7 @@ export class SnippetsList implements OnInit {
   router = inject(Router);
   selectedSnippet = inject(SharedService).selectedSnippet;
   snippetsService = inject(SnippetsService);
+  sharedService = inject(SharedService);
 
   ngOnInit(): void {
     this.getSnippets(); 
@@ -39,7 +39,8 @@ export class SnippetsList implements OnInit {
   getSnippets(){
     this.snippetsService.getSnippets().subscribe({
       next: (res:any) => {
-        this.snippetsList.set(res.data)
+        this.snippetsList.set(res.data);
+        this.sharedService.snippetsList.set(res.data);
       },
       error: (err) => {
         console.error("Error adding snippet", err);

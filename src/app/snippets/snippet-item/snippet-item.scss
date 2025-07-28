@@ -1,0 +1,33 @@
+@use '../../scss/variable' as *;
+
+.card-snippet-view {
+    padding: 0px;
+
+    .image-top-block {
+        width: 100%;
+        height: 265px;
+        border-bottom: 1px solid $border;
+        padding: 15px;
+
+        .card-img-top {
+            width: 100%;
+            height: 230px;
+            object-fit: contain;
+        }
+    }
+
+    .card-body {
+        padding: 40px;
+
+        .card-title {
+            margin-bottom: 15px;
+        }
+
+        .user {
+            span {
+                color: $dark-color;
+            }
+        }
+    }
+
+}

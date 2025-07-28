@@ -3,7 +3,7 @@
 <div class="row">
     @if(snippetsList() && snippetsList().length > 0) {
     @for (snippet of snippetsList(); track snippet) {
-    <div class="col-4">
+    <div class="col-sm-4">
         <!-- <div [class.no-demo]="!snippet.demo" class="div-item"> -->
         <div class="div-item">
             <app-snippet-thumbnail (click)="onSnippetFn(snippet)" [data]="snippet" [showTags]="true" />

@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/core/auth.service';
 import { SharedService } from '../../shared/services/shared.service';
@@ -16,7 +17,15 @@ export class Header {
   authService = inject(AuthService);
   sharedService = inject(SharedService);
   menu = this.sharedService.menu;
+  isMobile = false;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+      if (isPlatformBrowser(this.platformId)) {
+        // Access window object here
+        this.isMobile = window.innerWidth < 992;
+      }
+    }
+    
   onRouteFn(item: any) {
     if (item.title == 'Logout') {
       this.authService.logout().subscribe((data: any) => {
