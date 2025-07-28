@@ -34,6 +34,9 @@
     }
     .card-body{
             padding: 40px;
+            .card-title{
+                margin-bottom: 15px;
+            }
             .user{
                 span{
                     color: $dark-color;

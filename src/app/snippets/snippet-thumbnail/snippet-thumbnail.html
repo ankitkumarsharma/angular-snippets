@@ -1,0 +1,23 @@
+<div class="card-details-item">
+    <div class="card-details-item-img">
+        @if (showImg()) {
+        <img [src]="data().coverImage" [alt]="data().title" [title]="data().title" />
+        }
+        <div class="content-details">
+            <h3>{{data().title}}</h3>
+            @if (showTags()) {
+            <p>{{data().desc}}</p>
+            <ul class="list-inline tag-list">
+                @for (tag of data().tagList; track $index) {
+                <li class="list-inline-item">{{tag}}</li>
+                }
+            </ul>
+            }
+        </div>
+    </div>
+    <div class="hover-item">
+        <h3>{{data().title}}</h3>
+        <div class="space-10"></div>
+        <p>Know more</p>
+    </div>
+</div>

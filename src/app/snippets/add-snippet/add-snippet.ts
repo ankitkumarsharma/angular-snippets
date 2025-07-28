@@ -2,6 +2,8 @@ import { Component, ElementRef, inject, OnInit, signal, ViewChild } from '@angul
 import { ContainerRow } from "../../shared/utils/container-row/container-row";
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../auth/core/auth.service';
+import { SnippetsService } from '../core/snippets.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-snippet',
@@ -11,11 +13,12 @@ import { AuthService } from '../../auth/core/auth.service';
 })
 export class AddSnippet implements OnInit {
   addSnippetForm!: FormGroup;
-  snippetFormData:any;
   coverImageUrl: string | ArrayBuffer | null = null;
   tagList: string[] = [];
   @ViewChild('addTag') addTag!: ElementRef;
   authService = inject(AuthService);
+  snippetsService = inject(SnippetsService);
+  router = inject(Router);
 
   ngOnInit(): void {
     this.initForm();
@@ -61,9 +64,20 @@ export class AddSnippet implements OnInit {
       title: this.addSnippetForm.controls['title'].value,
       desc: this.addSnippetForm.controls['desc'].value,
       coverImage: this.coverImageUrl,
-      tagList: this.tagList
+      tagList: this.tagList,
+      username: this.authService.isLoggedIn()?.username || 'Anonymous'
     }
-    this.snippetFormData = data;
-    console.log("data>>>", this.snippetFormData)
+    this.snippetsService.addSnippets(data).subscribe({
+      next: (res) => {
+        this.addSnippetForm.reset();
+        this.coverImageUrl = null;
+        this.tagList = [];
+        this.router.navigate(['/']);
+      },
+      error: (err) => {
+        console.error("Error adding snippet", err);
+        alert('Failed to add snippet. Please try again later.');
+      }
+    });
   }
 }

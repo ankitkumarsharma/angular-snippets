@@ -1,29 +1,50 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { CardDetailsModel } from '../../core/app.models';
 import { SharedService } from '../../shared/services/shared.service';
 import { CardDetails } from '../../shared/utils/card-details/card-details';
+import { SnippetsService } from '../core/snippets.service';
 import { SearchSnippet } from '../search-snippet/search-snippet';
-import { SNIPPETS_LIST } from './core/snippets-list.constant';
+import { SnippetThumbnail } from "../snippet-thumbnail/snippet-thumbnail";
 
 @Component({
   selector: 'app-snippets-list',
-  imports: [CommonModule, SearchSnippet, CardDetails],
+  imports: [CommonModule, SearchSnippet, CardDetails, SnippetThumbnail],
   templateUrl: './snippets-list.html',
   styleUrl: './snippets-list.scss'
 })
-export class SnippetsList {
-  snippetsList:any = SNIPPETS_LIST;
+export class SnippetsList implements OnInit {
+  snippetsList = signal([]);
   router = inject(Router);
   selectedSnippet = inject(SharedService).selectedSnippet;
+  snippetsService = inject(SnippetsService);
 
-  filteredListFn(filteredList: CardDetailsModel[]) {
-    this.snippetsList = filteredList;
+  ngOnInit(): void {
+    this.getSnippets(); 
+  }
+
+  filteredListFn(filteredList: any) {
+    if (!filteredList || filteredList.length === 0) {
+      this.snippetsList.set([]);
+      return;
+    }
+    this.snippetsList.set(filteredList);
   }
   
   onSnippetFn(snippet:any) {
-    this.router.navigate([snippet.url]);
+    this.router.navigate(['/snippets', `@${snippet.username}`, encodeURIComponent(snippet.title)]);
     this.selectedSnippet.set(snippet);
+  }
+
+  getSnippets(){
+    this.snippetsService.getSnippets().subscribe({
+      next: (res:any) => {
+        this.snippetsList.set(res.data)
+      },
+      error: (err) => {
+        console.error("Error adding snippet", err);
+        alert('Failed to add snippet. Please try again later.');
+      }
+    });
   }
 }
