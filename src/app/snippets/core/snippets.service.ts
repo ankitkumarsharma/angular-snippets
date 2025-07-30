@@ -9,7 +9,7 @@ import { Snippet } from "./snippets.model";
 })
 export class SnippetsService {
     http = inject(HttpClient);
-
+    editorContent = signal<string>('');
     addSnippets(snippet:Snippet){
         return this.http.post(`${environment.apiUrl}${LABELS.route.snippets}${LABELS.route.addsnippet}`,snippet);
     }

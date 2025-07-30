@@ -6,10 +6,11 @@ import { AuthService } from '../../auth/core/auth.service';
 import { ContainerRow } from "../../shared/utils/container-row/container-row";
 import { SNIPPETS_CONSTANTS } from '../core/snippets.constant';
 import { SnippetsService } from '../core/snippets.service';
+import { SnippetTextEditor } from "./snippet-text-editor/snippet-text-editor";
 
 @Component({
   selector: 'app-add-snippet',
-  imports: [ContainerRow, ReactiveFormsModule, NgAksForms],
+  imports: [ContainerRow, ReactiveFormsModule, NgAksForms, SnippetTextEditor],
   templateUrl: './add-snippet.html',
   styleUrl: './add-snippet.scss'
 })
@@ -63,7 +64,8 @@ export class AddSnippet {
       ...this.addSnippetForm()?.value,
       coverImage: this.coverImageUrl(),
       tagList: this.tagList,
-      username: this.authService.isLoggedIn()?.username || 'Anonymous'
+      username: this.authService.isLoggedIn()?.username || 'Anonymous',
+      editorContent: this.snippetsService.editorContent()
     }
     console.log("Snippet Data:", data);
     this.snippetsService.addSnippets(data).subscribe({
