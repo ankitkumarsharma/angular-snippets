@@ -1,35 +1,30 @@
-import { Component, ElementRef, inject, OnInit, signal, ViewChild } from '@angular/core';
-import { ContainerRow } from "../../shared/utils/container-row/container-row";
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from '../../auth/core/auth.service';
-import { SnippetsService } from '../core/snippets.service';
+import { Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgAksForms } from "@ng-aks/forms";
+import { AuthService } from '../../auth/core/auth.service';
+import { ContainerRow } from "../../shared/utils/container-row/container-row";
+import { SNIPPETS_CONSTANTS } from '../core/snippets.constant';
+import { SnippetsService } from '../core/snippets.service';
 
 @Component({
   selector: 'app-add-snippet',
-  imports: [ContainerRow, ReactiveFormsModule],
+  imports: [ContainerRow, ReactiveFormsModule, NgAksForms],
   templateUrl: './add-snippet.html',
   styleUrl: './add-snippet.scss'
 })
-export class AddSnippet implements OnInit {
-  addSnippetForm!: FormGroup;
-  coverImageUrl: string | ArrayBuffer | null = null;
+export class AddSnippet {
+  formConfig = SNIPPETS_CONSTANTS.addSnippetsFormConfig;
+  addSnippetForm = signal<FormGroup<any> | null>(null);
+  coverImageUrl = signal<string | ArrayBuffer | null>(null);
   tagList: string[] = [];
   @ViewChild('addTag') addTag!: ElementRef;
   authService = inject(AuthService);
   snippetsService = inject(SnippetsService);
   router = inject(Router);
 
-  ngOnInit(): void {
-    this.initForm();
-  }
-
-  initForm() {
-    this.addSnippetForm = new FormGroup({
-      title: new FormControl(''),
-      desc: new FormControl(''),
-      coverImg: new FormControl(''),
-    })
+  onGetForm(e: FormGroup) {
+    this.addSnippetForm.set(e);
   }
 
   onCoverImageSelectedFn(event: Event): void {
@@ -39,7 +34,7 @@ export class AddSnippet implements OnInit {
       const reader = new FileReader();
 
       reader.onload = () => {
-        this.coverImageUrl = reader.result;
+        this.coverImageUrl.set(reader.result);
       };
 
       reader.readAsDataURL(file);
@@ -57,20 +52,24 @@ export class AddSnippet implements OnInit {
   }
 
   onAddSnippetFn() {
+    if (!this.addSnippetForm()?.valid) {
+      this.addSnippetForm()?.markAllAsTouched();
+      return;
+    }
     if (!confirm('Are you sure you want to add this snippet? Please check preview before add your snippet. Thanks')) {
       return;
     }
     let data = {
-      title: this.addSnippetForm.controls['title'].value,
-      desc: this.addSnippetForm.controls['desc'].value,
-      coverImage: this.coverImageUrl,
+      ...this.addSnippetForm()?.value,
+      coverImage: this.coverImageUrl(),
       tagList: this.tagList,
       username: this.authService.isLoggedIn()?.username || 'Anonymous'
     }
+    console.log("Snippet Data:", data);
     this.snippetsService.addSnippets(data).subscribe({
       next: (res) => {
-        this.addSnippetForm.reset();
-        this.coverImageUrl = null;
+        this.addSnippetForm()?.reset();
+        this.coverImageUrl.set(null)
         this.tagList = [];
         this.router.navigate(['/']);
       },
