@@ -7,10 +7,11 @@ import { ContainerRow } from "../../shared/utils/container-row/container-row";
 import { SNIPPETS_CONSTANTS } from '../core/snippets.constant';
 import { SnippetsService } from '../core/snippets.service';
 import { SnippetTextEditor } from "./snippet-text-editor/snippet-text-editor";
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-snippet',
-  imports: [ContainerRow, ReactiveFormsModule, NgAksForms, SnippetTextEditor],
+  imports: [ContainerRow, ReactiveFormsModule, NgAksForms, SnippetTextEditor, DatePipe],
   templateUrl: './add-snippet.html',
   styleUrl: './add-snippet.scss'
 })
@@ -23,7 +24,7 @@ export class AddSnippet {
   authService = inject(AuthService);
   snippetsService = inject(SnippetsService);
   router = inject(Router);
-
+  date = new Date();
   onGetForm(e: FormGroup) {
     this.addSnippetForm.set(e);
   }

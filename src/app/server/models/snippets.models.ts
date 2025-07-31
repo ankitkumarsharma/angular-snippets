@@ -21,7 +21,10 @@ const snippetsSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-},{timestamps: true});
+    editorContent: {
+        type: String,
+    }
+}, { timestamps: true });
 
 const Snippets = mongoose.model("Snippets", snippetsSchema);
 

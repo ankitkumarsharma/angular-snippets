@@ -66,7 +66,7 @@
                     </div>
                     <div class="card-body">
                         @if (authService.isLoggedIn()) {
-                        <h6 class="user">&#64;{{authService.isLoggedIn()?.name}} <span>posted on 26 Jul 2025</span></h6>
+                        <h6 class="user">&#64;{{authService.isLoggedIn()?.name}} <span>posted on {{date | date}}</span></h6>
                         }
                         <h3 class="card-title">{{addSnippetForm()?.value.title}}</h3>
                         <ul class="list-inline tag-list">

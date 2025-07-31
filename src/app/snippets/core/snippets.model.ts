@@ -4,6 +4,7 @@ export interface Snippet {
     coverImage: string | ArrayBuffer | null;
     tagList: string[];
     username: string;
+    editorContent?: string;
     createdAt?: Date;
     updatedAt?: Date;
 }
