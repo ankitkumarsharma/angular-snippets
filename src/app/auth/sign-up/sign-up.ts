@@ -1,16 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { ContainerRow } from "../../shared/utils/container-row/container-row";
-import { NgAksForms } from "@ng-aks/forms";
 import { FormGroup } from '@angular/forms';
-import { SIGN_UP_FORM_CONFIG } from '../core/auth.constant';
 import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../core/auth.service';
-import { SharedService } from '../../shared/services/shared.service';
+import { NgAksForms } from "@ng-aks/forms";
 import { HEADER } from '../../layout/core/layout.constant';
+import { SharedService } from '../../shared/services/shared.service';
+import { SIGN_UP_FORM_CONFIG } from '../core/auth.constant';
+import { AuthService } from '../core/auth.service';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [ContainerRow, NgAksForms, RouterLink],
+  imports: [NgAksForms, RouterLink],
   templateUrl: './sign-up.html',
   styleUrl: './sign-up.scss'
 })

@@ -18,3 +18,9 @@ export interface CardDetailsModel {
     tags?: Array<any>;
     demo?: boolean
 }
+
+export interface ResponseModel {
+    status: string,
+    message: string,
+    data?: any
+}

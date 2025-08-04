@@ -57,6 +57,18 @@ export const SIGN_UP_FORM_CONFIG: NgAksFormsConfigModel = {
       ],
     },
     {
+      type: ControlType.Text,
+      label: 'Email',
+      name: 'email',
+      value: '',
+      validations: [
+        {
+          name: ValidationName.Required,
+          message: 'Email is required',
+        },
+      ],
+    },
+    {
       type: ControlType.Password,
       label: 'Password',
       name: 'password',
@@ -71,7 +83,7 @@ export const SIGN_UP_FORM_CONFIG: NgAksFormsConfigModel = {
     {
       type: ControlType.Password,
       label: 'Confirm Password',
-      name: 'ConfirmPassword',
+      name: 'confirmPassword',
       value: '',
       validations: [
         {

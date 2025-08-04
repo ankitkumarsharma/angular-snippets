@@ -1,12 +1,12 @@
 <h6 class="title">Search Your <span>Snippets!</span></h6>
 <app-search-snippet (filteredListFn)="filteredListFn($event)" />
 <div class="row">
-    @if(snippetsList && snippetsList.length > 0) {
-    @for (snippet of snippetsList; track snippet) {
-    <div class="col-4">
-        <div [class.no-demo]="!snippet.demo" class="div-item">
-            <app-card-details (click)="onSnippetFn(snippet)" [width]="'100%'" [data]="snippet" [showTags]="true"
-                [hoverContent]="true" />
+    @if(snippetsList() && snippetsList().length > 0) {
+    @for (snippet of snippetsList(); track snippet) {
+    <div class="col-sm-4">
+        <!-- <div [class.no-demo]="!snippet.demo" class="div-item"> -->
+        <div class="div-item">
+            <app-snippet-thumbnail (click)="onSnippetFn(snippet)" [data]="snippet" [showTags]="true" />
         </div>
     </div>
     }

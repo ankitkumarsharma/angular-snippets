@@ -1,0 +1,8 @@
+<div class="toolbar">
+    <button (click)="applyStyle('bold')"><b>B</b></button>
+    <button (click)="applyStyle('italic')"><i>I</i></button>
+    <button (click)="applyStyle('underline')"><u>U</u></button>
+</div>
+
+<div class="editor" dir="rtl" contenteditable="true" [innerHTML]="editorContent" (input)="onInput($event)"
+    (blur)="onBlur($event)"></div>

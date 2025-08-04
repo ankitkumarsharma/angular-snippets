@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <article class="blog-post">
+                <div class="space-30"></div>
+                <div class="row">
+                    <div class="col-2">
+                        <button class="btn primary-btn" (click)="onBackFn()">Back</button>
+                    </div>
+                </div>
+                <div class="space-10"></div>
+                <div class="card card-snippet-view">
+                    @if (selectedSnippet().coverImage) {
+                    <div class="image-top-block">
+                        <img [src]="selectedSnippet().coverImage" class="card-img-top" alt="...">
+                    </div>
+                    }
+                    <div class="card-body">
+                        <h6 class="user">&#64;{{authService.isLoggedIn()?.name}} <span>posted on {{selectedSnippet().createdAt | date}}</span>
+                        </h6>
+                        <h3 class="card-title">{{selectedSnippet().title}}</h3>
+                        <ul class="list-inline tag-list">
+                            @for (tag of selectedSnippet().tagList; track $index) {
+                            <li class="list-inline-item">{{tag}}</li>
+                            }
+                        </ul>
+                        <p class="card-text">{{selectedSnippet().desc}}</p>
+                        <div class="snippet-content" [innerHTML]="selectedSnippet().editorContent"></div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>

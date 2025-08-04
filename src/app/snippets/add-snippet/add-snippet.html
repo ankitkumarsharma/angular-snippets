@@ -1,0 +1,86 @@
+<app-container-row>
+    <div class="space-40"></div>
+    <h6 class="title">Add your <span>snippet</span> here</h6>
+    <p class="title-desc">
+        You can add your Angular Snippets in left panel and in right panel , you can check your snippet preview, what
+        you are creating. <br />
+        Let's start...
+    </p>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <h4>Snippet Form</h4>
+                <hr />
+                <ng-aks-forms [formConfig]="formConfig" (onGetForm)="onGetForm($event)" />
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Add Cover Image</label>
+                    <div class="col-sm-8">
+                        <input type="file" (change)="onCoverImageSelectedFn($event)" accept="image/*"
+                            class="form-control" placeholder="Enter Description">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Add Tags</label>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <input [disabled]="tagList.length > 4" type="text" #addTag class="form-control"
+                                    placeholder="Enter tag name">
+                            </div>
+                            <div class="col-sm-5">
+                                <button [disabled]="tagList.length > 4" (click)="onAddTagFn(addTag.value)"
+                                    class="btn secondary-btn">Add
+                                    Tag</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <ul class="list-inline tag-list">
+                                    @for (tag of tagList; track $index;let i = $index;) {
+                                    <li class="list-inline-item">
+                                        {{tag}}
+                                        <a (click)="onRemoveTagFn(i)" class="close"><i class="fa fa-times"
+                                                aria-hidden="true"></i></a>
+                                    </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Add More Content</label>
+                    <div class="col-sm-8">
+                        <app-snippet-text-editor/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <h4>Preview your snippet</h4>
+                <hr />
+                <div class="card card-snippet-view">
+                    <div class="image-top-block">
+                        <img [src]="coverImageUrl()" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body">
+                        @if (authService.isLoggedIn()) {
+                        <h6 class="user">&#64;{{authService.isLoggedIn()?.name}} <span>posted on {{date | date}}</span></h6>
+                        }
+                        <h3 class="card-title">{{addSnippetForm()?.value.title}}</h3>
+                        <ul class="list-inline tag-list">
+                            @for (tag of tagList; track $index) {
+                            <li class="list-inline-item">{{tag}}</li>
+                            }
+                        </ul>
+                        <p class="card-text">{{addSnippetForm()?.value.desc}}</p>
+                        <div class="snippet-content" [innerHTML]="snippetsService.editorContent()"></div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" (click)="onAddSnippetFn()" class="btn primary-btn">Add Snippet</button>
+        </div>
+    </div>
+</app-container-row>
+<div class="space-40"></div>

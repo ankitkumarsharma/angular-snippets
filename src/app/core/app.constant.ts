@@ -4,7 +4,12 @@ export const LABELS = {
     home:'Home',
     fullName:'Ankit K Sharma',
     route: {
-        home:'/'
+        home:'/',
+        auth:'/auth',
+        snippets:'/snippets',
+        addsnippet:'/add-snippet',
+        login:'/login',
+        signup:'/signup',
     },
     snippets:'snippets'
 }

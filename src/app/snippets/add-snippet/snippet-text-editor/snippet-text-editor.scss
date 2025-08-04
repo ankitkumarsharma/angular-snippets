@@ -1,0 +1,25 @@
+.toolbar {
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: #ccc;
+}
+
+.toolbar button {
+  margin-right: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+.editor {
+  min-height: 150px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+  text-align: left;
+  direction: rtl;
+  unicode-bidi: plaintext; /* forces correct paragraph flow */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}

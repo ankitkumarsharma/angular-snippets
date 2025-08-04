@@ -56,9 +56,3 @@ export const SNIPPETS_LIST = [
         demo: false
     },
 ]
-export const DEFAULT_SNIPPET: CardDetailsModel = {
-    name: '', 
-    url: '',
-    title: '',
-    description: ''
-};

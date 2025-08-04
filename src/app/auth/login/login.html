@@ -1,10 +1,10 @@
-<app-container-row>
+<div class="d-flex justify-content-center align-items-center min-vh-80 p-3">
     <div class="card">
         <h6 class="title">Login <span>Snippets!</span></h6>
-        <ng-aks-forms [formConfig]="formConfig" (onGetForm)="onGetForm($event)"/>
+        <ng-aks-forms [formConfig]="formConfig" (onGetForm)="onGetForm($event)" />
         <div class="text-center">
             <button (click)="onSubmitForm()" class="btn primary-btn" type="submit">Login</button>
         </div>
         <p>Don't have an account? <a routerLink="/auth/sign-up">Signup</a></p>
     </div>
-</app-container-row>
+</div>
