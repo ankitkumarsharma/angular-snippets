@@ -27,7 +27,10 @@
                         <p class="card-text">{{selectedSnippet().desc}}</p>
                         <div class="snippet-content" [innerHTML]="selectedSnippet().editorContent"></div>
                         <hr/>
-                        <router-outlet/>
+                        @if (selectedSnippet().isDemo) {
+                            <h3 class="card-title">Demo</h3>
+                            <router-outlet/>
+                        }
                     </div>
                 </div>
             </article>

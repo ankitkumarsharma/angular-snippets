@@ -13,7 +13,7 @@ export const routes: Routes = [
     { path: 'add-snippet', canActivate: [AuthGuard], loadComponent: () => import('./snippets/add-snippet/add-snippet').then(m => m.AddSnippet) },
     { path: 'snippets/:userid/:id', component: SnippetItem, children: [
         { path: 'accordian-dynamic', data: {username:'ankit123'}, loadComponent: () => import('./components/accordian/accordian-same-content/accordian-same-content').then(m => m.AccordianSameContent) },
-        { path: 'accordian-custom', data: {username:'ankit123'}, loadComponent: () => import('./components/accordian/accordian-custum-content/accordian-custum-content').then(m => m.AccordianCustumContent) },
+        { path: 'accordian-custom', data: {username:'anu1'}, loadComponent: () => import('./components/accordian/accordian-custum-content/accordian-custum-content').then(m => m.AccordianCustumContent) },
         { path: 'tabs', data: {username:'anu1'}, loadComponent: () => import('./components/tabs/tabs').then(m => m.Tabs) },
         { path: 'filter-list', data: {username:'anu1'}, loadComponent: () => import('./components/filter-list/filter-list').then(m => m.FilterList) },
     ]},

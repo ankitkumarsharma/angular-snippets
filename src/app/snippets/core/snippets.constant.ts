@@ -33,6 +33,24 @@ export const SNIPPETS_CONSTANTS = {
                         message: 'Description is required',
                     },
                 ],
+            },
+            {
+                type: ControlType.Checkbox,
+                label: 'IsDemo',
+                name: 'isDemo',
+                value: '',
+                options:[
+                    {
+                        label: '',
+                        value: true
+                    }
+                ],
+            },
+            {
+                type: ControlType.Text,
+                label: 'Demo Link',
+                name: 'demoLink',
+                value: '',
             }
         ],
         layout: Layout.Horizontal,

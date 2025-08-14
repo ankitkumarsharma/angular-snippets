@@ -23,6 +23,14 @@ const snippetsSchema = new mongoose.Schema({
     },
     editorContent: {
         type: String,
+    },
+    isDemo: {
+        type: Boolean,
+        default: false,
+    },
+    demoLink: {
+        type: String,
+        default: '',
     }
 }, { timestamps: true });
 
