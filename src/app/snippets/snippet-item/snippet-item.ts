@@ -1,13 +1,13 @@
-import { Component, inject, WritableSignal } from '@angular/core';
-import { Router } from '@angular/router';
-import { Snippet } from '../core/snippets.model';
-import { SharedService } from '../../shared/services/shared.service';
-import { AuthService } from '../../auth/core/auth.service';
 import { DatePipe } from '@angular/common';
+import { Component, inject, WritableSignal } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+import { AuthService } from '../../auth/core/auth.service';
+import { SharedService } from '../../shared/services/shared.service';
+import { Snippet } from '../core/snippets.model';
 
 @Component({
   selector: 'app-snippet-item',
-  imports: [DatePipe],
+  imports: [DatePipe, RouterOutlet],
   templateUrl: './snippet-item.html',
   styleUrl: './snippet-item.scss'
 })
