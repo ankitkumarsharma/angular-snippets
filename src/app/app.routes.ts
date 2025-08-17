@@ -17,14 +17,6 @@ export const routes: Routes = [
         { path: 'tabs', data: {username:'anu1'}, loadComponent: () => import('./components/tabs/tabs').then(m => m.Tabs) },
         { path: 'filter-list', data: {username:'anu1'}, loadComponent: () => import('./components/filter-list/filter-list').then(m => m.FilterList) },
     ]},
-    {
-        path: 'snippets', component: ComponentContainer, children: [
-            { path: 'accordian-dynamic', loadComponent: () => import('./components/accordian/accordian-same-content/accordian-same-content').then(m => m.AccordianSameContent) },
-            { path: 'accordian-custom', loadComponent: () => import('./components/accordian/accordian-custum-content/accordian-custum-content').then(m => m.AccordianCustumContent) },
-            { path: 'tabs', loadComponent: () => import('./components/tabs/tabs').then(m => m.Tabs) },
-            { path: 'filter-list', loadComponent: () => import('./components/filter-list/filter-list').then(m => m.FilterList) },
-        ]
-    },
     { path: 'contact-us', loadComponent: () => import('./layout/contact-us/contact-us').then(m => m.ContactUs) },
     {
         path: 'auth', component: Auth,
