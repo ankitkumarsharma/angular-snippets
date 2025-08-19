@@ -2,7 +2,7 @@ import Snippets from "../models/snippets.models";
 
 export const addSnippets = async (req:any, res:any) => {
     try {
-        const { title, desc, coverImage, tagList, username, editorContent } = req.body;
+        const { title, desc, coverImage, tagList, username, editorContent, isDemo, demoLink } = req.body;
 
         const newSnippet = new Snippets({
             title,
@@ -10,7 +10,9 @@ export const addSnippets = async (req:any, res:any) => {
             coverImage,
             tagList,
             username,
-            editorContent
+            editorContent,
+            isDemo,
+            demoLink
         });
 
         await newSnippet.save();

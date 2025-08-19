@@ -16,7 +16,7 @@
                     </div>
                     }
                     <div class="card-body">
-                        <h6 class="user">&#64;{{authService.isLoggedIn()?.name}} <span>posted on {{selectedSnippet().createdAt | date}}</span>
+                        <h6 class="user">&#64;{{selectedSnippet().username}} <span>posted on {{selectedSnippet().createdAt | date}}</span>
                         </h6>
                         <h3 class="card-title">{{selectedSnippet().title}}</h3>
                         <ul class="list-inline tag-list">
@@ -26,6 +26,11 @@
                         </ul>
                         <p class="card-text">{{selectedSnippet().desc}}</p>
                         <div class="snippet-content" [innerHTML]="selectedSnippet().editorContent"></div>
+                        <hr/>
+                        @if (selectedSnippet().isDemo) {
+                            <h3 class="card-title">Demo</h3>
+                            <router-outlet/>
+                        }
                     </div>
                 </div>
             </article>

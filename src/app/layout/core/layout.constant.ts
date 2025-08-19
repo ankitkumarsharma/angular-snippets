@@ -28,6 +28,11 @@ export const HEADER = {
             route: null
         },
         {
+            title: 'Add Your Snippet',
+            url: null,
+            route: '/add-snippet'
+        },
+        {
             title: 'Contact Us',
             url: null,
             route: '/contact-us'

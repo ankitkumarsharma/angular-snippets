@@ -5,6 +5,8 @@ export interface Snippet {
     tagList: string[];
     username: string;
     editorContent?: string;
+    isDemo?: boolean;
+    demoLink?: string;
     createdAt?: Date;
     updatedAt?: Date;
 }
