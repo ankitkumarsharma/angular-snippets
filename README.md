@@ -67,6 +67,9 @@ Happy coding! 🚀
 # Code of Conduct
 will update
 
+# AI ML Update
+will update
+
 # Contact Us
 Have questions or ideas? Reach out to us:
 - Email: [aks.computerexpert@gmail.com](aks.computerexpert@gmail.com)
